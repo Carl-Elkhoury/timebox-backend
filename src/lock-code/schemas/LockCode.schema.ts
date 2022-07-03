@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import mongoose, { Document } from 'mongoose';
+import { ApplicationContainer } from './ApplicationContainer.schema';
 
 export type LockCodeDocument = LockCode & Document;
 
@@ -9,7 +10,10 @@ export class LockCode {
   code: string;
 
   @Prop({ required: true })
-  timeSet: number;
+  creationTimestamp: number;
+
+  @Prop({ required: true })
+  finishTimestamp: number;
 }
 
 export const LockCodeSchema = SchemaFactory.createForClass(LockCode);

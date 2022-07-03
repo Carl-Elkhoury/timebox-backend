@@ -9,10 +9,10 @@ export type ApplicationContainerDocument = ApplicationContainer & Document;
 export class ApplicationContainer {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'LatestLockCode',
+    ref: 'LockCode',
     require: false,
   })
-  LatestLockCode: LockCode;
+  latestLockCode: LockCode;
 }
 
 export const ApplicationContainerSchema =
