@@ -1,0 +1,4 @@
+npm start 
+GET on http://localhost:3000/lockCode/ to get latest code
+POST on http://localhost:3000/lockCode/create to create code
+GET on http://localhost:3000/lockCode/all to get all codes

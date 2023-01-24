@@ -33,6 +33,8 @@ export class LockCodeController {
     }
     if(lockCode.finishTimestamp > timestamp) {
         lockCode.code = null;
+    } else {
+      return this.lockCodeService._decryptLockCode(lockCode);
     }
     return lockCode;
   }
